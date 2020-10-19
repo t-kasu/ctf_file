@@ -11,3 +11,11 @@ SQL injection part2
 
 ## sql-injection.py
 SQL injection part1
+
+
+## start.sh
+make users and folders and set settings
+needs ./user_script.py
+
+## user_script.py
+main program of making users and folders and settings
