@@ -8,9 +8,7 @@ def get_flag(username, password):
     conn = sqlite3.connect(DATABASE_PATH)
     cur = conn.cursor()
     try: 
-#        cur.execute("SELECT flag FROM user WHERE username='%s' AND password='%s'" %(username,password))
-     #Correct_Code cur.execute("SELECT flag FROM user WHERE username=? AND password=?", (username,password))
-        cur.execute("SELECT flag FROM user WHERE username=? AND password=?", (username,password))
+        cur.execute("SELECT flag FROM user WHERE username='%s' AND password='%s'" %(username,password))
         row = cur.fetchone()
         result= row[0] if row is not None else "Error"
 
