@@ -2,7 +2,7 @@
 import subprocess
 for i in range(1,13):
     cmd1="useradd gp%s_user" % i
-    cmd2="echo pass_gp%s_west | passwd --stdin gp%s_user" %(i,i)
+    cmd2="echo pass_gp%s | passwd --stdin gp%s_user" %(i,i)
     cmd3="cp /root/getuser.py /home/gp%s_user" % i
     cmd4="chmod 666 /home/gp%s_user/getuser.py" % i
     cmd5="cp /root/sql-injection.py /home/gp%s_user" % i
