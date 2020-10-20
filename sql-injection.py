@@ -69,11 +69,13 @@ def check():
         s = requests.session()
         param1 = { "username":"user1", "password":"123456" }
         param2 = { "username":"user1", "password":"123457' or '1' = '1';--" }
+        param3 = { "username":"123457' or '1' = '1';--", "password":"password" }
 
         r1 = s.post(url, data = param1)
         r2 = s.post(url, data = param2)
+        r3 = s.post(url, data = param3)
 
-        if r1.text=="CTFlaguser1" and r2.text=="Error":
+        if r1.text=="CTFlaguser1" and r2.text=="Error" and r3.text=="Error":
            check_result= "Flag is bear"
         else:
            check_result= "Not correct"
