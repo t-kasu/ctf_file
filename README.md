@@ -17,5 +17,6 @@ SQL injection part1
 make users and folders and set settings
 needs ./user_script.py
 
-## user_script.py
+## user_script.sh
 main program of making users and folders and settings
+You have to change user's password.
