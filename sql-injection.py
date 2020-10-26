@@ -1,4 +1,4 @@
-#!/usr/bin/python3.7
+#!/bin/python
 
 import os
 import sqlite3
