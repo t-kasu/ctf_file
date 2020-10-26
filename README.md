@@ -13,9 +13,11 @@ SQL injection part2
 SQL injection part1
 
 
-## start.sh
+## sql_inj_start.sh
+make question of sql injection. 
 make users and folders and set settings
 needs ./user_script.py
+
 
 ## user_script.sh
 main program of making users and folders and settings
