@@ -28,12 +28,9 @@ sed -i vuln.c -e 's/setreuid(1002,1002)/setreuid('$b','$b')/'
 gcc -fno-stack-protector -z execstack vuln.c -o vuln.out
 
 #### 4. ユーザの作成
-#vulnuserとctfuser(1～）を作成する。
+#vulnuserを作成する。
 useradd vulnuser
 echo userpass | passwd --stdin vulnuser
-#ctf競技者用のユーザ ※作成してあれば不要
-#useradd ctfuser1
-#echo userpass | passwd --stdin ctfuser1
 
 #### 5. ファイル権限設定（ctfuserフォルダ内に作成する）
 #vuln.out→vulnuser所有、setuidビットを立てる。
@@ -44,11 +41,8 @@ chmod 4755 vuln.out
 
 #### 6. flag1.txt、flag2.txt→vulnuser所有。vulnuserのみ読み取り可能とする。
 echo "flag is kirin" > flag1.txt
-echo "flag is lemon" > flag2.txt
 chown vulnuser flag1.txt
 chmod 600 flag1.txt
-chown vulnuser flag2.txt
-chmod 600 flag2.txt
 
 #### 7. ctfuserフォルダの権限設定
 #BoF成功後にvulnuserとしてctfuser内のファイルを見るために以下の権限が必要
@@ -56,7 +50,5 @@ chmod 755 /home/vulnuser
 
 #### 8. 4つのファイルを全て/home/vulnuserに移動　
 mv /root/flag1.txt /home/vulnuser
-mv /root/flag2.txt /home/vulnuser
 mv /root/vuln.c /home/vulnuser
 mv /root/vuln.out /home/vulnuser
-
