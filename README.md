@@ -28,3 +28,8 @@ You have to change user's password.
 make question of bof
 program of buffer over flow 
 
+
+## bof_start.sh
+make question of bof
+do settings
+needs vuln.c
